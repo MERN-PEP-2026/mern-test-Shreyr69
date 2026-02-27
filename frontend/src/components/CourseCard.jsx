@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 const CourseCard = ({ course, onDelete }) => {
+  const navigate = useNavigate();
+
   const formattedDate = new Date(course.createdAt).toLocaleDateString('en-IN', {
     year: 'numeric',
     month: 'short',
@@ -9,13 +13,22 @@ const CourseCard = ({ course, onDelete }) => {
     <div className="course-card">
       <div className="course-card-header">
         <h3 className="course-name">{course.courseName}</h3>
-        <button
-          className="btn-delete"
-          onClick={() => onDelete(course._id)}
-          title="Delete course"
-        >
-          ✕
-        </button>
+        <div className="course-actions">
+          <button
+            className="btn-edit"
+            onClick={() => navigate(`/courses/edit/${course._id}`, { state: { course } })}
+            title="Edit course"
+          >
+            ✏️
+          </button>
+          <button
+            className="btn-delete"
+            onClick={() => onDelete(course._id)}
+            title="Delete course"
+          >
+            ✕
+          </button>
+        </div>
       </div>
       <p className="course-description">{course.courseDescription}</p>
       <div className="course-footer">
