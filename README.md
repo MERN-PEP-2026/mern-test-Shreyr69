@@ -55,10 +55,10 @@ npm run dev
 
 ## API Endpoints
 
-| Method | Route | Description |
-|--------|-------|-------------|
-| POST | /api/auth/register | Register student |
-| POST | /api/auth/login | Login student |
-| POST | /api/courses | Create course |
-| GET | /api/courses | Get all courses |
-| DELETE | /api/courses/:id | Delete course |
+| Method | Route              | Description      |
+| ------ | ------------------ | ---------------- |
+| POST   | /api/auth/register | Register student |
+| POST   | /api/auth/login    | Login student    |
+| POST   | /api/courses       | Create course    |
+| GET    | /api/courses       | Get all courses  |
+| DELETE | /api/courses/:id   | Delete course    |
